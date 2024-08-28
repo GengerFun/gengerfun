@@ -1,0 +1,23 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: itemservice
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_hmall?useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        namespace: dc3b88c3-3141-4971-b672-1cbef965fb51
+        server-addr: localhost:8848
+mybatis-plus:
+  type-aliases-package: com.hmall.item.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      update-strategy: not_null
+      id-type: auto
